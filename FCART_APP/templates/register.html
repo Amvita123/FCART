@@ -1,0 +1,82 @@
+{% load static %}
+<link rel="stylesheet" href="/static/css/style.css">
+<div class="container">
+    <div class="form-container">
+        <h2 class="text-center mb-4">User Registration</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="first_name">First_name:</label>
+                {{ form.first_name }}
+                {% for error in form.first_name.errors %}
+                    <p class="error-message">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last_name:</label>
+                {{ form.last_name }}
+                {% for error in form.last_name.errors %}
+                    <p class="error-message">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                {{ form.email }}
+                {% for error in form.email.errors %}
+                    <p class="error-message">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                {{ form.password }}
+                {% for error in form.password.errors %}
+                    <p class="error-message">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm_Password:</label>
+                {{ form.confirm_password }}
+                {% for error in form.confirm_password.errors %}
+                    <p class="error-message">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label for="phone_no">Phone_Number:</label>
+                {{ form.phone_no }}
+                {% for error in form.phone_no.errors %}
+                    <p class="error-message">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                {{ form.gender }}
+                {% for error in form.gender.errors %}
+                    <p class="error-message">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                {{ form.address }}
+                {% for error in form.address.errors %}
+                    <p class="error-message">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label for="role">Role:</label>
+                {{ form.role }}
+                {% for error in form.role.errors %}
+                    <p class="error-message">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label for="verify_through">Verify_Through:</label>
+                {{ form.verify_through }}
+                {% for error in form.verify_through.errors %}
+                    <p class="error-message">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,22 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<div class="container">
+    <h1>Verify OTP</h1>
+
+    <form method="POST" action=' '>
+        {% csrf_token %}
+        <label for="otp">Enter OTP:</label>
+        <input type="text" id="otp" name="otp" required>
+<!--            <input type="text" value="{{ email }}" name="email">-->
+        <button type="submit">Verify OTP</button>
+    </form>
+
+    {% if message %}
+        <p class="message">{{ message }}</p>
+    {% endif %}
+
+    <div class="footer">
+        <p>If you didn't receive the OTP, <a href="{% url 'resend_otp' %}">Resend OTP</a>.</p>
+    </div>
+</div>
+

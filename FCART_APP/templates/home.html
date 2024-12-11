@@ -1,0 +1,8 @@
+{% load static %}
+<h1>Ecom Application</h1>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<div class="buttons-container">
+    <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
+    <a href="{% url 'login' %}" class="btn btn-secondary">Login</a>
+</div>
+
